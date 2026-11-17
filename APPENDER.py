@@ -15,7 +15,6 @@ def RSI_14_AVERAGE_CALCULATOR(yf_cp_list,event):
         else:
             print ("WARNING :- NUMBER OF PRICES ARE LESS THAN 14 DATA POINTS...!!\n")
             print ('The length of close price list is = \n',len(yf_cp_list))
-            print ('\n\n\n\n\n\n So thats why exiting the program................. \n\n\n\n\n\n')
             sys.exit(1)
         gains = []
         losses = []
@@ -232,8 +231,8 @@ def JUGAAD_DATA(n,lock,jg_stock_quote,eq,Stock,l):
             return jg_data
         except Exception as e:
             
-            print ('\n\n\n\n\n\n',repr(e))
-            print ('\n\n\n\n\n\nERROR = Couldnt reach the NSE server for the STOCK QUOTE,\nSo retrying again to fetch the data..........\n\n\n\n\n\n')
+            print ('\n\n',repr(e))
+            print ('\n\nnERROR = Couldnt reach the NSE server for the STOCK QUOTE,\nSo retrying again to fetch the data.')
             if l < 5:
                 FETCHER(n,eq,l)
     
@@ -270,19 +269,6 @@ def DATA_PROCESSOR(start, end, yfd_dict, period_for_5m,two_min_RSI_avg, five_min
     for i in range(start, end):
         l = 0
         JUGAAD_DATA(n,lock,jg_stock_quote,eqList[i],Stock,l)
-        '''    AVERAGE RSI(14) COLUMN   '''
-        '''
-        for key,value in yfd_dict.items():
-            yf_cp_list = value[(eqList[i], 'Close')].tolist()
-            rsi = RSI_14_AVERAGE_CALCULATOR(yf_cp_list,event)
-            event.wait()    #3
-            with lock:
-                if key == '2m':
-                    two_min_RSI_avg.append(rsi)
-                #################       release this column of the comment once you include the 5min data average RSI caluclation column
-                if key == '5m':
-                    five_min_RSI_avg.append(rsi)
-        '''
         
         '''    PRICE BREAKOUT COLUMN    '''
         yf_all_stocks_data = yfd_dict['5m'].iloc[-3:]
