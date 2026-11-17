@@ -21,6 +21,8 @@
 
 ## About The Project
 
+Built on - June 2024
+
 This project is a modular intraday NSE trading analysis system that
 continuously scans a configurable watchlist, downloads 2-minute and
 5-minute market data, computes RSI, price breakout percentages, volume
@@ -64,8 +66,8 @@ Required packages: - pandas - yfinance
 ### Installation
 
 ``` bash
-git clone https://github.com/yourusername/nse-trading-system-v6.git
-cd nse-trading-system-v6
+git clone https://github.com/pandiyan07/NSE-Intraday-Trading-System-v6.git
+cd NSE-Intraday-Trading-System-v6
 pip install -r requirements.txt
 python Trading_system_v6.py
 ```
