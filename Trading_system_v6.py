@@ -69,8 +69,8 @@ event = multiprocessing.Event()
 try:
     n = NSELive()
 except Exception as e:
-    print ('\n\n\n\n\n\n',repr(e))
-    print ('There is NO INTERNET CONNECTION dude...!!\n\n\n\n\n\n')
+    print ('\n\n',repr(e))
+    print ('There is NO INTERNET CONNECTION...!!\n\n\n\n\n\n')
     sys.exit(1)
 
 
@@ -102,38 +102,6 @@ eqList = [
 ]
 
 
-#eqList = ["INFY.NS", "AUBANK.NS","ITC.NS","WIPRO.NS","TCS.NS", 'HDFCBANK.NS', 'ICICIBANK.NS','BHARTIARTL.NS', 'SBIN.NS', "HEROMOTOCO.NS"]
-
-
-# Nifty 200 stocks
-'''
-eqList = ["ABB.NS", "ACC.NS","APLAPOLLO.NS", "AUBANK.NS", "ADANIENSOL.NS", "ADANIENT.NS", "ADANIGREEN.NS", "ADANIPORTS.NS", "UNITDSPR.NS",
-"ADANIPOWER.NS", "ATGL.NS", "ABCAPITAL.NS", "ABFRL.NS", "ALKEM.NS", "AMBUJACEM.NS", "APOLLOHOSP.NS", "APOLLOTYRE.NS", "ASHOKLEY.NS", 
-"ASIANPAINT.NS", "ASTRAL.NS", "AUROPHARMA.NS", "DMART.NS", "AXISBANK.NS", "BSE.NS", "BAJAJ-AUTO.NS", "BAJFINANCE.NS", "BAJAJFINSV.NS", 
-"BAJAJHLDNG.NS", "BALKRISIND.NS", "BANDHANBNK.NS", "BANKBARODA.NS", "BANKINDIA.NS", "MAHABANK.NS", "BERGEPAINT.NS", "BDL.NS",  
-"BHARATFORG.NS", "BHEL.NS", "BPCL.NS", "BHARTIARTL.NS", "BIOCON.NS", "BOSCHLTD.NS", "BRITANNIA.NS", "CGPOWER.NS", "CANBK.NS", "CHOLAFIN.NS", 
-"CIPLA.NS", "COALINDIA.NS", "COFORGE.NS", "COLPAL.NS", "CONCOR.NS", "CUMMINSIND.NS", "DLF.NS", "DABUR.NS", "DALBHARAT.NS", "DEEPAKNTR.NS", 
-"DELHIVERY.NS", "DIVISLAB.NS", "DIXON.NS", "LALPATHLAB.NS", "DRREDDY.NS", "EICHERMOT.NS", "ESCORTS.NS", "NYKAA.NS", "FEDERALBNK.NS", 
-"FACT.NS", "FORTIS.NS", "GAIL.NS", "GMRINFRA.NS", "GLAND.NS", "GODREJCP.NS", "GODREJPROP.NS", "GRASIM.NS", "GUJGASLTD.NS", "HCLTECH.NS", 
-"HDFCAMC.NS", "HDFCBANK.NS", "HDFCLIFE.NS", "HAVELLS.NS", "HEROMOTOCO.NS", "HINDALCO.NS", "HAL.NS", "HINDPETRO.NS", "HINDUNILVR.NS", 
-"ICICIBANK.NS", "ICICIGI.NS", "ICICIPRULI.NS", "IDBI.NS", "IDFCFIRSTB.NS", "ITC.NS", "INDIANB.NS", "INDHOTEL.NS", "IOC.NS", "SIEMENS.NS",
-"IRFC.NS", "IGL.NS", "INDUSTOWER.NS", "INDUSINDBK.NS", "NAUKRI.NS", "INFY.NS", "INDIGO.NS", "IPCALAB.NS","JSWENERGY.NS", "JSWINFRA.NS",
-"JSWSTEEL.NS", "JINDALSTEL.NS", "JIOFIN.NS", "JUBLFOOD.NS", "KPITTECH.NS", "KALYANKJIL.NS","BEL.NS","IRCTC.NS","PNB.NS","M&MFIN.NS",
-"KOTAKBANK.NS", "LTF.NS", "LTTS.NS", "LICHSGFIN.NS", "LTIM.NS", "LT.NS", "LAURUSLABS.NS", "LICI.NS", "LUPIN.NS", "MRF.NS", "LODHA.NS", 
-"M&M.NS", "MANKIND.NS", "MARICO.NS", "MARUTI.NS", "MFSL.NS", "MAXHEALTH.NS", "MPHASIS.NS", "NHPC.NS", "NMDC.NS", "NTPC.NS",
-"NESTLEIND.NS", "OBEROIRLTY.NS", "ONGC.NS", "OIL.NS", "PAYTM.NS", "OFSS.NS", "POLICYBZR.NS", "PIIND.NS", "PAGEIND.NS", "PATANJALI.NS",
-"PERSISTENT.NS", "PETRONET.NS", "PIDILITIND.NS", "PEL.NS", "POLYCAB.NS", "POONAWALLA.NS", "PFC.NS", "POWERGRID.NS", "PRESTIGE.NS", 
-"RECLTD.NS", "RVNL.NS", "RELIANCE.NS", "SBICARD.NS", "SBILIFE.NS", "SJVN.NS", "SRF.NS", "MOTHERSON.NS", "SHREECEM.NS", "SHRIRAMFIN.NS", 
-"SONACOMS.NS", "SBIN.NS", "SAIL.NS", "SUNPHARMA.NS", "SUNTV.NS", "SUPREMEIND.NS", "SUZLON.NS", "SYNGENE.NS", "TVSMOTOR.NS", "TATACHEM.NS",
-"TATACOMM.NS", "TCS.NS", "TATACONSUM.NS", "TATAELXSI.NS", "TATAMTRDVR.NS", "TATAMOTORS.NS", "TATAPOWER.NS", "TATASTEEL.NS", "TATATECH.NS",
-"TECHM.NS", "TITAN.NS", "TORNTPHARM.NS", "TORNTPOWER.NS", "TRENT.NS", "TIINDIA.NS", "UPL.NS", "ULTRACEMCO.NS", "UNIONBANK.NS", "ZYDUSLIFE.NS",
-"VBL.NS", "VEDL.NS", "IDEA.NS", "VOLTAS.NS", "WIPRO.NS", "YESBANK.NS", "ZEEL.NS", "ZOMATO.NS", "MAZDOCK.NS"]
-'''
-
-
-# RUN THIS CODE FROM THE START OF THE MARKET AT - 9:19:30am
-#   Enable this daily morning in    ====>    SCHEDULER python file in while loop of SCHEDULE_TASK() function
-#   Also disbale the trading_system_start_time variable current time assignment in the below given Main function
 target_start_hour, target_start_minute, target_start_second = 9, 16, 40 
 trading_system_start_time = datetime.now().replace(hour=target_start_hour, minute=target_start_minute, second=target_start_second)
 
@@ -169,12 +137,12 @@ def THE_MAIN(j,Stock,pChange,total_traded_volume,last_three_volume,twenty_ma,up_
         y=0
         
         curr_time = datetime.now()
-        print ('\n\n\n\n\n\n\nSTARTING TO FETCH YFINANCE DATA AT = ',curr_time.strftime("%H:%M:%S"))
+        print ('\n\nSTARTING TO FETCH YFINANCE DATA AT = ',curr_time.strftime("%H:%M:%S"))
         
         for i in range(0,2):
             y+=1
             data_fetching_process = multiprocessing.Process(
-                target=SCHEDULE_TASK,                        ############## SCHEDULER.py file
+                target=SCHEDULE_TASK,                        # SCHEDULER.py file
                 args=(y,yfd_dict,lock,period_for_2m,period_for_5m,trading_system_start_time,event,eqList))
             processes.append(data_fetching_process)
             data_fetching_process.start()
@@ -197,7 +165,7 @@ def THE_MAIN(j,Stock,pChange,total_traded_volume,last_three_volume,twenty_ma,up_
             end = start + chunk_size if i < num_processor_cores - 1 else len(eqList)
             
             data_processing_process = multiprocessing.Process(
-                target=DATA_PROCESSOR,                         ##############  APPENDER.py file
+                target=DATA_PROCESSOR,                         #  APPENDER.py file
                 args=(start,end,yfd_dict,period_for_5m,two_min_RSI_avg, five_min_RSI_avg, Stock,
                 total_traded_volume, pChange, lock, breakout, bopp,twenty_ma,up_and_low_circuit,orb,
                 last_three_volume,eqList,event,n,jg_stock_quote,ten_min_bo,five_min_bo))
@@ -217,8 +185,8 @@ def THE_MAIN(j,Stock,pChange,total_traded_volume,last_three_volume,twenty_ma,up_
             try:
                 nifty200 = n.live_index("NIFTY 200")
             except Exception as e:
-                print ('\n\n\n\n\n\n',repr(e))
-                print ('\n\n\n\n\n\nERROR = Couldnt reach the NSE server for the LIVE INDEX data,\nSo retrying again to fetch the data..........\n\n\n\n\n\n')
+                print ('\n\n',repr(e))
+                print ('\n\nERROR = Couldnt reach the NSE server for the LIVE INDEX data,\nSo retrying again to fetch the data...\n\n\n\n\n\n')
                 if l < 5:
                     JUGAAD_DATA(n,l)
             return nifty200
@@ -287,65 +255,11 @@ def THE_MAIN(j,Stock,pChange,total_traded_volume,last_three_volume,twenty_ma,up_
         
         
         df_generating_process = multiprocessing.Process(
-                target=DATAFRAME_GENERATOR,             #############  PRINTER.py file
+                target=DATAFRAME_GENERATOR,             #  PRINTER.py file
                 args=(advances,declines,unchanged,j,final_pchange_output_dict,final_breakout_dict,final_upper_lower_circuit_dict,
                     jg_stock_quote,ranking_iter,ranking_dict,eqList,final_ORB_dict,ten_min_bo_dict,five_min_bo_dict))
         df_generating_process.start()
         df_generating_process.join()
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        #       Remove the Nifty 200 stocks and include the 180 FnO stocks by getting the list of fno stocks using nselib
-        
-        #       Write the meaning of = Todays strong BULLISH stocks are :-
-        #       &  Todays strong BEARISH stocks are :-
-        
-        
-        
-        #       For the first 5 min of the market just print the 5min BO,
-        #       then the first 10 min of the market print the both 5min & 10min BO and so on............
-        
-        #       Remove the = The top sorted ORB STOCKS are :- table & 
-        #       Instead add a simple Volume breakout table, with the number of times increase of the current 5min volume bar
-        #       For this create a simple table where all the stock's current 5 min volume is divided by their 
-        #       total volume average and then if the difference is more than 4 times append it to the table
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         # This loop checks for both, Day open = Day low & Day open = Day High stocks
         
@@ -454,7 +368,6 @@ if __name__ == '__main__':
     trading_system_start_time = datetime.now()
     
     if trading_system_start_time < datetime.now():
-        print (f"Adangomma, the specified time {trading_system_start_time} has already passed daa....!!")
         print ("exiting the program !!")
         sys.exit(1)
 
