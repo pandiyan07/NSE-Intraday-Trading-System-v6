@@ -175,7 +175,7 @@ def DATAFRAME_GENERATOR(advances,declines,unchanged,j,final_pchange_output_dict,
         final_upper_lower_circuit_dataframe = pd.DataFrame(final_upper_lower_circuit_dict)
         final_ORB_dataframe = pd.DataFrame(final_ORB_dict)
     except Exception as e:
-        print ('\n\n\n',repr(e),'\n\n\n')
+        print ('\n\n',repr(e))
     
     '''    UPPER AND LOWER CIRCUIT PERCENTAGE     '''
     final_upper_lower_circuit_dataframe = final_upper_lower_circuit_dataframe.sort_values(by='Circuit level', ascending=True)
